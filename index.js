@@ -1,9 +1,10 @@
 var katzDeli = [];
+var number = 0;
 
-function takeANumber(katzDeliLine, name) {
+/*function takeANumber(katzDeliLine, name) {
   katzDeliLine.push(name);
   return `Welcome, ${name}. You are number ${katzDeliLine.length} in line.`;
-}
+}*/
 
 function nowServing(katzDeliLine) {
   if (katzDeliLine.length < 1) {
@@ -23,4 +24,8 @@ function currentLine(katzDeliLine) {
   }
   return theLine;
   }
+}
+
+function takeANumber(katzDeliLine, name) {
+  
 }
