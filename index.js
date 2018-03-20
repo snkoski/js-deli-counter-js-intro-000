@@ -1,5 +1,9 @@
 var katzDeli = [];
 var number = 0;
+var katzHistory = {
+  
+};
+
 
 /*function takeANumber(katzDeliLine, name) {
   katzDeliLine.push(name);
@@ -10,7 +14,9 @@ function nowServing(katzDeliLine) {
   if (katzDeliLine.length < 1) {
     return "There is nobody waiting to be served!";
   } else {
-    return `Currently serving ${katzDeliLine.shift()}.`;
+    var currentCustomer = katzDeliLine.shift();
+    katzHistory[currentCustomer]["timeOut"] = Date.now();
+    return `Currently serving ${currentCustomer}.`;
   }
 }
 
@@ -27,5 +33,14 @@ function currentLine(katzDeliLine) {
 }
 
 function takeANumber(katzDeliLine, name) {
+  number++;
   
+  var person = {
+    number: number,
+    timeIn: Date.now(),
+  }
+  katzHistory[number] = person;
+  katzDeliLine.push(number);
+  return `You are number ${number}`;
 }
+
